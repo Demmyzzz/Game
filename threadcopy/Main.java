@@ -30,8 +30,4 @@ public class Main extends Thread{
         mainS.start();
     }
 }
-        /*
-        SecondMain First = new SecondMain("src\\text.txt", "src\\test.txt");
-        SecondMain Second =  new SecondMain("src\\text2", "src\\test2.txt");
-        */
-
+     
