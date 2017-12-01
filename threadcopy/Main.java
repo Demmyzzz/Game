@@ -24,10 +24,9 @@ public class Main extends Thread{
         System.out.println(System.currentTimeMillis() + " Millis ");
     }
     public static void main(String[] args) {
-        Main mainF = new Main("src\\text.txt" , "src\\test.txt");
-        Main mainS = new Main("src\\text2", "src\\test2.txt");
+        Main mainF = new Main("src\\test.txt", "src\\text.txt" );
+        Main mainS = new Main("src\\test2.txt","src\\text2" );
         mainF.start();
         mainS.start();
     }
 }
-     
