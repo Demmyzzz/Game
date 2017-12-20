@@ -12,7 +12,7 @@ public class Main extends Thread{
         this.outputFile = output;
     }
     public void run() {
-        System.out.println("start processing... "+getName()+" "+currentThread());
+        System.out.println("start processing... "+getName());
 
         String s;
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(inputFile))) {
@@ -23,7 +23,7 @@ public class Main extends Thread{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("end process "+getName()+ " "+ currentThread());
+        System.out.println("end process "+getName());
         //выводит сколько миллисекунд работал поток
       //  System.out.println(System.currentTimeMillis()+" Millis");выводи текущее время в миллисекундах
     }
