@@ -41,17 +41,17 @@ public class Main{
                 * String file
                 * */
 
-                Transfer();
+
 
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Transfer();
     }
-/*
 
- */
-    private static String PageFlow(URL url, String result) {
+
+    public static String PageFlow(URL url, String result) {
         try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(url.openStream()))) {
             result = bufferedReader.lines().collect(Collectors.joining("\n"));
         } catch (IOException e) {
@@ -62,7 +62,7 @@ public class Main{
 /*
 *
 * */
-    private static void CheckPattern(URL url, String result) {
+    public static void CheckPattern(URL url, String result) {
         try (BufferedWriter outFile = new BufferedWriter(new FileWriter(OUT_FILE_TXT))) {
             Pattern email_pattern = Pattern.compile(DATA_URL);
             Matcher matcher = email_pattern.matcher(PageFlow(url, result));
@@ -78,12 +78,11 @@ public class Main{
         }
     }
 
-    private static void Transfer() {
+    public static void Transfer() {
         String music;
         int count = 0;
         try (BufferedReader musicFile = new BufferedReader(new FileReader(OUT_FILE_TXT))){
             while ((music = musicFile.readLine()) != null) {
-
                 downloadUsingNIO(music, PATH_TO_MUSIC + String.valueOf(count) + ".mp3");
                 count++;
             }
@@ -96,11 +95,8 @@ public class Main{
         URL url = new URL(strUrl);
         Download d = new Download(url, strUrl, file);
         Download threadNumOne = new Download(url,strUrl,file);
-        Download threadNumTwo = new Download(url,strUrl,file);
-
-        threadNumOne.setName("first");
-        threadNumTwo.setName("second");
-
+        threadNumOne.start();
     }
+
 }
 

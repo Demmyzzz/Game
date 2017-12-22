@@ -16,7 +16,6 @@ public class Download extends Thread{
         this.url = url;
         this.strUrl = strUrl;
         this.file = file;
-        start();
     }
 
     public void run(){
