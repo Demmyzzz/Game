@@ -17,7 +17,6 @@ public class Main{
         String Url;
         try (BufferedReader inFile = new BufferedReader(new FileReader(IN_FILE_TXT))) {
             while ((Url = inFile.readLine()) != null) {
-                System.out.println("first-step-programm");
                 URL url = new URL(Url);
                 String result ="";
                 
@@ -53,7 +52,6 @@ public class Main{
 
  */
     private static String PageFlow(URL url, String result) {
-        System.out.println("second-step-programm");
         try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(url.openStream()))) {
             result = bufferedReader.lines().collect(Collectors.joining("\n"));
         } catch (IOException e) {
@@ -65,7 +63,6 @@ public class Main{
 *
 * */
     private static void CheckPattern(URL url, String result) {
-        System.out.println("thrid-step-programm");
         try (BufferedWriter outFile = new BufferedWriter(new FileWriter(OUT_FILE_TXT))) {
             Pattern email_pattern = Pattern.compile(DATA_URL);
             Matcher matcher = email_pattern.matcher(PageFlow(url, result));
@@ -82,7 +79,6 @@ public class Main{
     }
 
     private static void Transfer() {
-        System.out.println("fourth-step-programm");
         String music;
         int count = 0;
         try (BufferedReader musicFile = new BufferedReader(new FileReader(OUT_FILE_TXT))){
@@ -97,7 +93,6 @@ public class Main{
     }
 
     public static void downloadUsingNIO(String strUrl, String file) throws IOException {
-        System.out.println("fifth-step-programm");
         URL url = new URL(strUrl);
         Download d = new Download(url, strUrl, file);
         Download threadNumOne = new Download(url,strUrl,file);
