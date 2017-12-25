@@ -9,12 +9,10 @@ import java.nio.channels.ReadableByteChannel;
 public class Download extends Thread{
 
     private URL url;
-    private String strUrl;
     private String file;
 
-    public Download(URL url, String strUrl, String file) {
+    public Download(URL url, String file) {
         this.url = url;
-        this.strUrl = strUrl;
         this.file = file;
     }
 
