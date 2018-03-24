@@ -3,26 +3,27 @@ package warmup;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static jdk.nashorn.internal.objects.NativeArray.reverse;
-
 public class WarmUp {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        int c;
+        System.out.print("Ведите количевсто заказов: ");
+        c = sc.nextInt();
 
         int t;
-        int array[] = new int[5];
+        int array[] = new int[c];
         addArr(array);
         Arrays.sort(array);
         System.out.println(Arrays.toString(array));
 
-        System.out.println("Введите сколько чисел сложить");
+        System.out.println("Введите сколько заказов сложить");
         t = sc.nextInt();
-        while(t > 5){
-            System.out.println("вы ввели число больше 5");
+        while(t > c){
+            System.out.println("вы ввели время большее чем количевство заказов");
             t=sc.nextInt();
         }
-        
+
         int sum = 0;
         for (int i = 0; i <= (t - 1); i++) {
             sum = array[i] + sum;
@@ -34,7 +35,7 @@ public class WarmUp {
         int i = 0;
         int num;
         while (array.length != i) {
-            System.out.print("Enter your num: ");
+            System.out.print("Введите количевсто денег за заказ: ");
             num = sc.nextInt();
             array[i] = num;
             i++;
