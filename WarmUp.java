@@ -3,6 +3,8 @@ package warmup;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import static jdk.nashorn.internal.objects.NativeArray.reverse;
+
 public class WarmUp {
     static Scanner sc = new Scanner(System.in);
 
@@ -13,9 +15,15 @@ public class WarmUp {
         addArr(array);
         Arrays.sort(array);
         System.out.println(Arrays.toString(array));
-        int sum = 0;
+
         System.out.println("Введите сколько чисел сложить");
         t = sc.nextInt();
+        while(t > 5){
+            System.out.println("вы ввели число больше 5");
+            t=sc.nextInt();
+        }
+        
+        int sum = 0;
         for (int i = 0; i <= (t - 1); i++) {
             sum = array[i] + sum;
         }
