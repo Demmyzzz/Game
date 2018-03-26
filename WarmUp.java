@@ -25,10 +25,11 @@ public class WarmUp {
         }
 
         int sum = 0;
-        for (int i = 0; i <= (t - 1); i++) {
-            sum = array[i] + sum;
+
+        for (int i = array.length - 1; i >= (t - 1); i--) {
+            sum = sum + array[i];
         }
-        System.out.println(sum + " summ");
+        System.out.println(sum+" summ");
     }
 
     private static void addArr(int[] array) {
