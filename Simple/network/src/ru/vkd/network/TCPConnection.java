@@ -4,10 +4,6 @@ import java.io.*;
 import java.net.Socket;
 import java.nio.charset.Charset;
 
-import java.io.*;
-import java.net.Socket;
-import java.nio.charset.Charset;
-
 public class TCPConnection {
     private final Socket socket;
     private final Thread thread;

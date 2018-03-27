@@ -15,7 +15,7 @@ public class ChatServer implements TCPConnectionListener {
 
     private ChatServer() {
         System.out.println("Сервер запущен...");
-        try (ServerSocket serverSocket = new ServerSocket(8189)) {
+        try (ServerSocket serverSocket = new ServerSocket(8183)) {
             while (true) {
                 try {
                     new TCPConnection(this, serverSocket.accept());

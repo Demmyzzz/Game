@@ -10,8 +10,8 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class ClientWindow extends JFrame implements ActionListener, TCPConnectionListener {
-    private static final String IP_ADDR = "::1"; //Server ip address
-    private static final int PORT = 8189; // Server work port
+    private static final String IP_ADDR = "192.168.0.66"; //Server ip address
+    private static final int PORT = 8183; // Server work port
     private static final int WIDTH = 600; // Window size width (640)
     private static final int HEIGHT = 400; // Window size height (480)
 
