@@ -15,23 +15,23 @@ public class WarmUp {
         int array[] = new int[c];
         addArr(array);
         Arrays.sort(array);
-        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(array)+ " заказы");
 
         System.out.println("Введите сколько заказов сложить");
         t = sc.nextInt();
-        while(t > c){
-            System.out.println("вы ввели время большее чем количевство заказов");
-            t=sc.nextInt();
+        int summ = 0;
+        if (t > c) {
+            for (int i = 0; i <= array.length-1; i++) {
+                summ = summ + array[i];
+            }
+            System.out.println(summ + " сумма заказов");
+        } else {
+            for (int i = array.length - 1; i >= (t - 1); i--) {
+                summ = summ + array[i];
+            }
+            System.out.println(summ + " сумма заказов");
         }
-
-        int sum = 0;
-
-        for (int i = array.length - 1; i >= (t - 1); i--) {
-            sum = sum + array[i];
-        }
-        System.out.println(sum+" summ");
     }
-
     private static void addArr(int[] array) {
         int i = 0;
         int num;
