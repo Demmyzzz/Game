@@ -23,9 +23,6 @@ public class Client {
                 say = in.readUTF();
                 System.out.println("сервер прислал - " + say);
                 out.flush();
-                if(keyWord.equals(say)) {
-                    break;
-                }
             }
 
         } catch (IOException e) {
