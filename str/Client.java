@@ -13,14 +13,13 @@ public class Client {
             DataOutputStream out = new DataOutputStream(outputStream);
 
             BufferedReader userSay = new BufferedReader(new InputStreamReader(System.in));
-            String say = null;
+            String say ;
 
             while(true){
                 say = userSay.readLine();
-                System.out.println("Sending this line to the server...");
                 out.writeUTF(say);
                 say = in.readUTF();
-                System.out.println(say+" прислал сервер");
+                System.out.println("сервер прислал - " + say);
                 out.flush();
 
             }

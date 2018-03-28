@@ -17,11 +17,11 @@ public class Server {
             DataInputStream in = new DataInputStream(inputStream);
             DataOutputStream out = new DataOutputStream(outputStream);
 
-            String say = null;
+            String say;
 
             while (true){
                 say = in.readUTF();
-                System.out.println("клиент говорит - " + say);
+                System.out.println("клиент прислал - " + say);
                 out.writeUTF(say);
                 out.flush();
                 Thread.sleep(2000);
