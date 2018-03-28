@@ -19,8 +19,8 @@ public class Client {
             while(true){
                 say = userSay.readLine();
                 out.writeUTF(say);
-                if(keyWord.equals(say)) {break;}
                 say = in.readUTF();
+                if(keyWord.equals(say)) {break;}
                 System.out.println("сервер прислал - " + say);
                 out.flush();
             }

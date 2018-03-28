@@ -20,15 +20,14 @@ public class Server {
             String say;
             String keyWord = "/exit";
 
-            while ((say = in.readUTF()) == keyWord){
+            while (true){
                 say = in.readUTF();
-                System.out.println("клиент прислал - " + say);
+                System.out.println("клиент прислал - "+ say);
                 out.writeUTF(say);
                 out.flush();
                 Thread.sleep(2000);
 
             }
-            System.out.println("клиент офф..");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
