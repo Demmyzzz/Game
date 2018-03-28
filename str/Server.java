@@ -18,8 +18,9 @@ public class Server {
             DataOutputStream out = new DataOutputStream(outputStream);
 
             String say;
+            String keyWord = "/exit";
 
-            while (true){
+            while ((say = in.readUTF()) == keyWord){
                 say = in.readUTF();
                 System.out.println("клиент прислал - " + say);
                 out.writeUTF(say);
@@ -27,11 +28,9 @@ public class Server {
                 Thread.sleep(2000);
 
             }
-
+            System.out.println("клиент офф..");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("клиент офф..");
-
     }
 }

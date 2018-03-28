@@ -3,7 +3,6 @@ package Socket.str;
 import java.io.*;
 import java.net.Socket;
 
-
 public class Client {
 
     public static void main(String[] args) throws InterruptedException {
@@ -15,13 +14,18 @@ public class Client {
             BufferedReader userSay = new BufferedReader(new InputStreamReader(System.in));
             String say ;
 
+            String keyWord = "/exit";
+
             while(true){
                 say = userSay.readLine();
                 out.writeUTF(say);
+                if(keyWord.equals(say)) {break;}
                 say = in.readUTF();
                 System.out.println("сервер прислал - " + say);
                 out.flush();
-
+                if(keyWord.equals(say)) {
+                    break;
+                }
             }
 
         } catch (IOException e) {
